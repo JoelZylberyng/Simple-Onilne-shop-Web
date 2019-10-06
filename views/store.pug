@@ -1,0 +1,174 @@
+extends layout
+
+block content
+    .main.container
+        .row
+            h1.display-4.m-b-2 Store
+
+            div.container
+                form(method='GET' action='/store')
+                    div.form-group
+                    select(name='selectedItem')
+                        each val in ['Everything', 'iPhone' , 'Galaxy', 'Xiaomi']
+                            option=val
+                    | !{' '}
+                    button.btn.btn-primary(type='submit') Search
+
+            if session.selectedItem != "iPhone" && session.selectedItem != "Galaxy" && session.selectedItem != "Xiaomi"
+                div.container-fluid
+                    .row
+                        form(method='GET' action='/add-to-cart')
+                            div.form-group(class="card", style="width: 14rem;")
+                                img.image(src='images/iphonexr.png', style="width: 200px; height: 200px;")
+                                div.card-body.small
+                                    h5 #[strong iPhone Xr]
+                                    p Some text about this phone
+                                    label.overflow-hidden
+                                    input#xr.form-control(type='hidden', name='name', value='iphonexr')
+                                    div.card-footer(style="height: 1rem;")
+                                        button.btn.btn-primary.btn-sm(type='submit') Add to cart
+                                        div.float-right.h6 $700
+
+
+                        form(method='GET' action='/add-to-cart')
+                            div.form-group(class="card", style="width: 14rem; margin-left: 10px;")
+                                img.image(src='images/iphonexs.png', style="width: 200px; height: 200px;")
+                                div.card-body.small
+                                    h5 #[strong iPhone Xs]
+                                    p Some text about this phone
+                                    label.overflow-hidden
+                                    input#xs.form-control(type='hidden', name='name', value='iphonexs')
+                                    div.card-footer(style="height: 1rem;")
+                                        button.btn.btn-primary.btn-sm(type='submit') Add to cart
+                                        div.float-right.h6 $900
+
+                        form(method='GET' action='/add-to-cart')
+                            div.form-group(class="card", style="width: 15rem; margin-left: 10px;")
+                                img.image(src='images/galaxy10.png', style="width: 200px; height: 200px;")
+                                div.card-body.small
+                                    h5 #[strong Samsung Galaxy 10]
+                                    p Some text about this phone
+                                    label.overflow-hidden
+                                    input#galaxy10.form-control(type='hidden', name='name', value='galaxy10')
+                                    div.card-footer(style="height: 1rem;")
+                                        button.btn.btn-primary.btn-sm(type='submit') Add to cart
+                                        div.float-right.h6 $850
+
+                        form(method='GET' action='/add-to-cart')
+                            div.form-group(class="card", style="width: 14rem; margin-left: 10px;")
+                                img.image(src='images/galaxynote.jpg', style="width: 200px; height: 175px;")
+                                div.card-body.small
+                                    h5 #[strong Samsung Galaxy Note]
+                                    p Some text about this phone
+                                    label.overflow-hidden
+                                    input#galaxynote.form-control(type='hidden', name='name', value='galaxynote')
+                                    div.card-footer(style="height: 1rem;")
+                                        button.btn.btn-primary.btn-sm(type='submit') Add to cart
+                                        div.float-right.h6 $750
+
+                        form(method='GET' action='/add-to-cart')
+                            div.form-group(class="card", style="width: 14rem; margin-left: 10px;")
+                                img.image(src='images/xiaomimi9.jpg', style="width: 200px; height: 180px;")
+                                div.card-body.small
+                                    h5 #[strong Xiaomi Mi 9]
+                                    p Some text about this phone
+                                    label.overflow-hidden
+                                    input#xiaomimi9.form-control(type='hidden', name='name', value='xiaomimi9')
+                                    div.card-footer(style="height: 1rem;")
+                                        button.btn.btn-primary.btn-sm(type='submit') Add to cart
+                                        div.float-right.h6 $650
+
+                        form(method='GET' action='/add-to-cart')
+                            div.form-group(class="card", style="width: 14rem; margin-left: 10px;")
+                                img.image(src='images/xiaominote7.jpg', style="width: 200px; height: 180px;")
+                                div.card-body.small
+                                    h5 #[strong Xiaomi Note 7]
+                                    p Some text about this phone
+                                    label.overflow-hidden
+                                    input#xiaominote7.form-control(type='hidden', name='name', value='xiaominote7')
+                                    div.card-footer(style="height: 1rem;")
+                                        button.btn.btn-primary.btn-sm(type='submit') Add to cart
+                                        div.float-right.h6 $590
+
+            else
+
+                if session.selectedItem == "iPhone"
+                    div.row
+                        form(method='GET' action='/add-to-cart')
+                            div.form-group(class="card", style="width: 14rem;")
+                                img.image(src='images/iphonexr.png', style="width: 200px; height: 200px;")
+                                div.card-body.small
+                                    h5 #[strong iPhone Xr]
+                                    p Some text about this phone
+                                    label.overflow-hidden
+                                    input#xr.form-control(type='hidden', name='name', value='iphonexr')
+                                    div.card-footer(style="height: 1rem;")
+                                        button.btn.btn-primary.btn-sm(type='submit') Add to cart
+                                        div.float-right.h6 $700
+
+                        form(method='GET' action='/add-to-cart')
+                            div.form-group(class="card", style="width: 14rem; margin-left: 10px;")
+                                img.image(src='images/iphonexs.png', style="width: 200px; height: 200px;")
+                                div.card-body.small
+                                    h5 #[strong iPhone Xs]
+                                    p Some text about this phone
+                                    label.overflow-hidden
+                                    input#xs.form-control(type='hidden', name='name', value='iphonexs')
+                                    div.card-footer(style="height: 1rem;")
+                                        button.btn.btn-primary.btn-sm(type='submit') Add to cart
+                                        div.float-right.h6 $900
+
+                if session.selectedItem == "Galaxy"
+                    div.row
+                        form(method='GET' action='/add-to-cart')
+                            div.form-group(class="card", style="width: 14rem; margin-left: 10px;")
+                                img.image(src='images/galaxy10.png', style="width: 200px; height: 200px;")
+                                div.card-body.small
+                                    h5 #[strong Samsung Galaxy 10]
+                                    p Some text about this phone
+                                    label.overflow-hidden
+                                    input#galaxy10.form-control(type='hidden', name='name', value='galaxy10')
+                                    div.card-footer(style="height: 1rem;")
+                                        button.btn.btn-primary.btn-sm(type='submit') Add to cart
+                                        div.float-right.h6 $850
+
+                        form(method='GET' action='/add-to-cart')
+                            div.form-group(class="card", style="width: 14rem; margin-left: 10px;")
+                                img.image(src='images/galaxynote.jpg', style="width: 200px; height: 200px;")
+                                div.card-body.small
+                                    h5 #[strong Samsung Galaxy Note]
+                                    p Some text about this phone
+                                    label.overflow-hidden
+                                    input#galaxynote.form-control(type='hidden', name='name', value='galaxynote')
+                                    div.card-footer(style="height: 1rem;")
+                                        button.btn.btn-primary.btn-sm(type='submit') Add to cart
+                                        div.float-right.h6 $750
+
+                if session.selectedItem == "Xiaomi"
+                    form(method='GET' action='/add-to-cart')
+                        div.form-group(class="card", style="width: 14rem; margin-left: 10px;")
+                            img.image(src='images/xiaomimi9.jpg', style="width: 200px; height: 180px;")
+                            div.card-body.small
+                                h5 #[strong Xiaomi Mi 9]
+                                p Some text about this phone
+                                label.overflow-hidden
+                                input#xiaomimi9.form-control(type='hidden', name='name', value='xiaomimi9')
+                                div.card-footer(style="height: 1rem;")
+                                    button.btn.btn-primary.btn-sm(type='submit') Add to cart
+                                    div.float-right.h6 $650
+
+                    form(method='GET' action='/add-to-cart')
+                        div.form-group(class="card", style="width: 14rem; margin-left: 10px;")
+                            img.image(src='images/xiaominote7.jpg', style="width: 200px; height: 180px;")
+                            div.card-body.small
+                                h5 #[strong Xiaomi Note 7]
+                                p Some text about this phone
+                                label.overflow-hidden
+                                input#xiaominote7.form-control(type='hidden', name='name', value='xiaominote7')
+                                div.card-footer(style="height: 1rem;")
+                                    button.btn.btn-primary.btn-sm(type='submit') Add to cart
+                                    div.float-right.h6 $590
+
+
+
+

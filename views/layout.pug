@@ -1,0 +1,57 @@
+doctype html
+html(lang='en')
+    head
+        title Cell Shop
+        link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        nav.navbar.navbar-expand-lg.navbar-dark.bg-info
+            a.navbar-brand(href='/') Cell Shop
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+
+            .collapse.navbar-collapse(id='navbarSupportedContent')
+                ul.navbar-nav.mr-auto
+                    if user
+                        li.nav-item
+                            a.nav-link(href='/store') Store
+                        li.nav-item
+                            a.nav-link(href='/deals') Deals
+                ul.navbar-nav.float-right
+                    if !user
+                        li.nav-item
+                            a.nav-link(href='/users/login') Login
+                        li.nav-item
+                            a.nav-link(href='/users/register') Register
+                    if user
+                        li.nav-item
+                            span.navbar-text(class="badge badge-link") Welcome, #{user.username}
+                        a.nav-link(href='/cart', class='fa fa-shopping-cart')
+                            if session.cart != null
+                                li.nav-item
+                                    span.navbar-text(class="badge badge-primary") #[strong #{session.cart.totalQty}]
+                            else
+                                li.nav-item
+                                    span.navbar-text(class="badge badge-primary") #[strong 0]
+                        li.nav-item
+                            a.nav-link(href='/users/logout') Logout
+
+        != messages()
+        block content
+
+        footer#footer
+            nav.navbar-xs.navbar-expand-lg.navbar-dark.bg-dark.fixed-bottom
+                button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+                    span.navbar-toggler-icon
+                .collapse.navbar-collapse(id='navbarSupportedContent2')
+                    ul.navbar-nav.align-content-center
+                        li.nav-item
+                            a.nav-link(href='/about') About Us
+                        li.nav-item
+                            a.nav-link(href='/jobs') Jobs
+
+            != messages()
+
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.mi.js')
+        script(src='javascripts/bootstrap.js')
+        script(src='javascripts/searchfilter.js')

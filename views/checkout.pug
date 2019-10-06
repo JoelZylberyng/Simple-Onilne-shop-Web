@@ -1,0 +1,42 @@
+extends layout
+
+block content
+    .main.container
+        .row
+            .col-md-6.col-md-offset-3
+                h1.display-4.m-b-2 Checkout
+                br
+                p.h3 Your total: $#{totalPrice}
+                br
+                p Please fill in the following details:
+
+                -data = data || {}
+
+                if errors
+                    ul.my-errors
+                        for error in errors
+                            div.alert.alert-danger #{error.msg}
+
+                form(method='POST' action='/checkout')
+                    div.form-group
+                        label(for='name') Full Name:
+                        input#name.form-control(type='text', name='name')
+                    div.form-group
+                        label(for='id') ID:
+                        input#id.form-control(type='text', name='id')
+                    div.form-group
+                        label(for='cardNum') Card Number:
+                        input#cardNum.form-control(type='text' name='cardNum')
+                    div.form-group
+                        b Expiration Date:
+                        br
+                        label(for='month') Month (MM):
+                        input#month.form-control(type='text' name='month')
+                        label(for='year') Year (YY):
+                            input#year.form-control(type='text' name='year')
+                        div.form-group
+                            label(for='cvc') CVC:
+                            input#cvc.form-control(type='text' name='cvc')
+                    button.btn.btn-primary(type='submit') Buy Now
+                    br
+                    br

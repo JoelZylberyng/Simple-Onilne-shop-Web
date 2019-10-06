@@ -1,0 +1,17 @@
+extends layout
+
+block content
+
+    input#myInput(type='text' onkeyup='tableFilter()' placeholder='Filter Usernames')
+
+    table#myTable.listing-table.table-dark.table-striped
+        tr
+            th Username
+            th Email
+            th Purchase History
+        each registration in registrations
+            tr
+                td= registration.username
+                td= registration.email
+                td= registration.purchaseHistory
+

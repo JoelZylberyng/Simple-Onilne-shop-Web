@@ -1,0 +1,52 @@
+extends layout
+
+block content
+    .main.container
+        .row
+            .col-md-6.col-md-offset-3
+                h1.display-4.m-b-2 Cart
+
+                -data = data || {}
+
+                if errors
+                    ul.my-errors
+                        for error in errors
+                            //li= error.msg
+                            div.alert.alert-danger #{error.msg}
+
+
+
+                if items != undefined
+                    ul
+                        each item in items
+                            if item.name != undefined
+                                .card-content
+                                    Strong= item.qty
+                                    | !{' '}
+                                    case item.name
+                                        when "iphonexr"
+                                            strong= "iPhone Xr"
+                                        when "iphonexs"
+                                            strong= "iPhone Xs"
+                                        when "galaxy10"
+                                            strong= "Galaxy 10"
+                                        when "galaxynote"
+                                            strong= "Galaxy Note"
+                                        when "xiaomimi9"
+                                            strong= "Xiaomi Mi 9"
+                                        when "xiaominote7"
+                                            strong= "Xiaomi Note 7"
+                                    p.price #{`$${item.price}`}
+                                    | !{' '}
+                                    form(method='GET' action='/remove-from-cart')
+                                        button.btn.btn-primary(type='submit' name='name' value=item.name) Remove from cart
+                            br
+                        .card-content
+                            strong #{`Total Quantity: ${totalQty}`}
+                            br
+                            strong #{`Total Price: $${totalPrice}`}
+                        hr
+                        .card-content
+                            a.button.btn.btn-primary(href='/checkout') CHECKOUT
+                else
+                    img.image(src='images/emptycart.jpg', style="position: absolute; top: 150%; left: 50%; margin-right: -50%;")

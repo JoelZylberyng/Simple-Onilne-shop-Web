@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    .main.container
+        .row
+            .col-md-6.col-md-offset-3
+                h1.display-4.m-b-2 Payment Confirmation
+
+                -data = data || {}
+
+                if errors
+                    ul.my-errors
+                        for error in errors
+                            //li= error.msg
+                            div.alert.alert-danger #{error.msg}
+
+                br
+                h3 Your card has been charged successfully!

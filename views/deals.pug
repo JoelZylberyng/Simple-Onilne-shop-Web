@@ -1,0 +1,33 @@
+extends layout
+
+block content
+    .main.container
+        .row
+            .col-md-6.col-md-offset-3
+                h1.display-4.m-b-2 Deals
+
+                br
+                h2 Deal 1 - iPhones
+                p Buy 2 iPhones and get the 3rd for 50% off!
+                a(href='/store?selectedItem=iPhone') Shop iPhones
+                img.image(src='images/iphonexr.png', style="position: absolute; top: 5%; left: 60%; margin-right: -50%; width: 200px; height: 200px;")
+
+                br
+                br
+                br
+                h2 Deal 2 - Galaxy
+                p Buy 1 Galaxy and get the 2nd for 30% off!
+                a(href='/store?selectedItem=Galaxy') Shop Galaxy
+                img.image(src='images/galaxy10.png', style="position: absolute; top: 40%; left: 65%; margin-right: -50%; width: 200px; height: 180px;")
+
+                br
+                br
+                br
+                br
+                br
+                h2 Deal 3 - Multiple Brands
+                p Buy 1 iPhone and 1 Galaxy and get a Xiaomi for 50% off!
+                a(href='/store') Shop Smartphones
+                img.image(src='images/smartphones.png', style="position: absolute; top: 75%; left: 80%; margin-right: -50%; width: 250px; height: 150px;")
+                br
+                br

@@ -1,0 +1,38 @@
+{
+  "name": "cellshop",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "bootstrap-loader": "^3.0.4",
+    "chai": "^4.2.0",
+    "connect-flash": "*",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "eval": "^0.1.4",
+    "express": "~4.16.1",
+    "express-messages": "*",
+    "express-rate-limit": "^5.0.0",
+    "express-session": "^1.16.2",
+    "express-validator": "*",
+    "http-auth": "^3.2.3",
+    "http-errors": "~1.6.3",
+    "jsdom": "^15.1.1",
+    "mongodb": "*",
+    "mongoose": "*",
+    "morgan": "~1.9.1",
+    "multer": "*",
+    "node-dom": "^0.1.0",
+    "node-fetch": "^2.6.0",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*",
+    "passport-remember-me": "0.0.1",
+    "pug": "^2.0.0-rc.4",
+    "serve-favicon": "^2.5.0"
+  }
+}
