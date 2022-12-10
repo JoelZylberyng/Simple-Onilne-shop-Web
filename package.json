@@ -14,7 +14,7 @@
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "eval": "^0.1.4",
-    "express": "~4.16.1",
+    "express": "~4.17.3",
     "express-messages": "*",
     "express-rate-limit": "^5.0.0",
     "express-session": "^1.16.2",
